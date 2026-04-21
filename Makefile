@@ -25,9 +25,16 @@ new_feature:
 
 feature: get_mason new_feature build get
 
-ios:
+ios_rebuild:
 	@echo "🍎 Ребилд ios"
+	flutter clean && \
+	flutter pub get && \
 	cd ios/ && \
     	rm -rf Pods/ && \
     	rm -rf Podfile.lock && \
+    	pod repo update && \
     	pod install
+
+xcode:
+	@echo "🍎 Открываем xcode"
+	open ios/Runner.xcworkspace

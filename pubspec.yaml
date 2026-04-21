@@ -1,7 +1,15 @@
 name: flutter_iiko_app
-description: "A new Flutter project."
+description: "Flutter app. The main goal of the application is to provide a convenient interface for interacting with the iiko API, which is widely used in restaurants and cafés for managing orders, deliveries, and logistics."
 publish_to: 'none'
+
 version: 1.0.0+1
+
+repository: https://github.com/ultra-rony/flutter_iiko_app
+homepage: https://github.com/ultra-rony/flutter_iiko_app
+
+owner:
+  name: Romain Diakonov
+  email: i@rodrix.ru
 
 environment:
   sdk: ^3.7.0
@@ -23,6 +31,8 @@ dependencies:
   injectable: ^2.6.0
   auto_route: ^10.2.0
   google_fonts: ^6.3.2
+  path: ^1.9.1
+  sqflite: ^2.4.2
 
 dev_dependencies:
   flutter_test:
@@ -36,10 +46,8 @@ dev_dependencies:
   freezed: ^3.2.3
 
 flutter:
-
   uses-material-design: true
-
   assets:
-    - assets/
+    - assets/images/
     - .env
 

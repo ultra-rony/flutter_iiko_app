@@ -1,14 +1,14 @@
-abstract class NetworkResult<T> {
+abstract class Result<T> {
   final T? data;
   final String? error;
 
-  const NetworkResult({this.data, this.error});
+  const Result({this.data, this.error});
 }
 
-class NetworkSuccess<T> extends NetworkResult<T> {
-  const NetworkSuccess(T data) : super(data: data);
+class Success<T> extends Result<T> {
+  const Success(T data) : super(data: data);
 }
 
-class NetworkFailure<T> extends NetworkResult<T> {
-  const NetworkFailure(String error) : super(error: error);
+class Failure<T> extends Result<T> {
+  const Failure(String error) : super(error: error);
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_iiko_app/app/routes/app_routers.dart';
+import 'package:flutter_iiko_app/app/route/app_routers.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
