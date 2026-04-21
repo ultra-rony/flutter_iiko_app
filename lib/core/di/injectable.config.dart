@@ -12,8 +12,10 @@
 import 'package:dio/dio.dart' as _i361;
 import 'package:flutter_iiko_app/core/bloc/app_bloc_observer.dart' as _i992;
 import 'package:flutter_iiko_app/core/di/register_modules.dart' as _i236;
-import 'package:flutter_iiko_app/shared/data/data_sources/auth_data_source.dart'
-    as _i732;
+import 'package:flutter_iiko_app/shared/data/data_sources/auth_local_data_source.dart'
+    as _i819;
+import 'package:flutter_iiko_app/shared/data/data_sources/auth_remote_data_source.dart'
+    as _i837;
 import 'package:flutter_iiko_app/shared/data/repositories/auth_repository_impl.dart'
     as _i93;
 import 'package:flutter_iiko_app/shared/domain/repositories/auth_repository.dart'
@@ -40,15 +42,21 @@ extension GetItInjectableX on _i174.GetIt {
       preResolve: true,
     );
     gh.lazySingleton<_i974.Logger>(() => registerModule.logger);
+    gh.lazySingleton<_i819.AuthLocalDataSource>(
+      () => _i819.AuthLocalDataSourceImpl(gh<_i779.Database>()),
+    );
     gh.lazySingleton<_i992.AppBlocObserver>(
       () => registerModule.blocObserver(gh<_i974.Logger>()),
     );
     gh.lazySingleton<_i361.Dio>(() => registerModule.dio(gh<_i974.Logger>()));
-    gh.lazySingleton<_i732.AuthDataSource>(
-      () => _i732.AuthDataSourceImpl(gh<_i779.Database>(), gh<_i361.Dio>()),
+    gh.lazySingleton<_i837.AuthRemoteDataSource>(
+      () => _i837.AuthRemoteDataSourceImpl(gh<_i361.Dio>()),
     );
     gh.lazySingleton<_i1009.AuthRepository>(
-      () => _i93.AuthRepositoryImpl(gh<_i732.AuthDataSource>()),
+      () => _i93.AuthRepositoryImpl(
+        gh<_i819.AuthLocalDataSource>(),
+        gh<_i837.AuthRemoteDataSource>(),
+      ),
     );
     gh.factory<_i60.GetAccessTokenUseCase>(
       () => _i60.GetAccessTokenUseCase(

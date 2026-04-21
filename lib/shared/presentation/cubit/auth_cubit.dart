@@ -20,6 +20,7 @@ class AuthCubit extends Cubit<AuthState> {
       final resp = await _accessTokenUseCase();
       if (resp != null) {
         Constants.accessToken = resp.token;
+        print("dsadssdads: ${Constants.accessToken}");
         emit(state.copyWith(accessToken: resp.token));
       }
     } catch (e) {

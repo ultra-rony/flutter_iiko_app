@@ -1,40 +1,25 @@
-import 'package:dio/dio.dart';
-import 'package:flutter_iiko_app/core/utils/constants.dart';
 import 'package:flutter_iiko_app/shared/data/models/access_token/access_token_model.dart';
 import 'package:injectable/injectable.dart';
 import 'package:sqflite/sqflite.dart';
 
-abstract class AuthDataSource {
+abstract class AuthLocalDataSource {
   Future<void> save(AccessTokenModel? entity);
 
   Future<AccessTokenModel?> getLocalAccessToken();
-
-  Future<Response> getRemoteAccessToken();
 }
 
-@LazySingleton(as: AuthDataSource)
-class AuthDataSourceImpl implements AuthDataSource {
+@LazySingleton(as: AuthLocalDataSource)
+class AuthLocalDataSourceImpl implements AuthLocalDataSource {
   final Database db;
-  final Dio _dio;
+  static const tableName = 'auth';
 
-  AuthDataSourceImpl(this.db, this._dio);
-
-  @override
-  Future<Response> getRemoteAccessToken() async {
-    _dio.options.headers['Content-Type'] = 'application/json';
-    _dio.options.headers['Cache-Control'] = 'no-cache';
-    _dio.options.headers['Connection'] = 'keep-alive';
-    return await _dio.post(
-      '${Constants.iiKoBaseUrl}/api/1/access_token',
-      data: {'apiLogin': Constants.iikoApiKey},
-    );
-  }
+  AuthLocalDataSourceImpl(this.db);
 
   @override
   Future<void> save(AccessTokenModel? entity) async {
     final now = DateTime.now().toIso8601String();
 
-    await db.insert('auth', {
+    await db.insert(tableName, {
       'id': 1,
       'correlationId': entity?.correlationId,
       'token': entity?.token,
@@ -45,7 +30,7 @@ class AuthDataSourceImpl implements AuthDataSource {
   @override
   Future<AccessTokenModel?> getLocalAccessToken() async {
     final maps = await db.query(
-      'auth',
+      tableName,
       where: 'id = ?',
       whereArgs: [1],
       limit: 1,
