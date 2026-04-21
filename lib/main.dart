@@ -10,5 +10,5 @@ Future<void> main() async {
   await dotenv.load(fileName: ".env");
   await configureInjection();
   Bloc.observer = getIt<AppBlocObserver>();
-  runApp(const App());
+  runApp(App());
 }

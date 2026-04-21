@@ -8,14 +8,10 @@ class HomeScreen extends StatefulWidget {
   @override
   createState() => _HomeScreenState();
 }
+
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("data"),
-      ),
-    );
+    return const Scaffold(body: Center(child: Text("data")));
   }
-
 }

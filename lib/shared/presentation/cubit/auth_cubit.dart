@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_iiko_app/core/utils/constants.dart';
 import 'package:flutter_iiko_app/shared/domain/entities/user/user_entity.dart';
 import 'package:flutter_iiko_app/shared/domain/use_cases/get_access_token_use_case.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -18,6 +19,7 @@ class AuthCubit extends Cubit<AuthState> {
     try {
       final resp = await _accessTokenUseCase();
       if (resp != null) {
+        Constants.accessToken = resp.token;
         emit(state.copyWith(accessToken: resp.token));
       }
     } catch (e) {
