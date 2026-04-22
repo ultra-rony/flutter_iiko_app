@@ -1,4 +1,4 @@
-package fun.rony.flutter_iiko_app
+package ru.rodrix.flutter_iiko_app
 
 import io.flutter.embedding.android.FlutterActivity
 
