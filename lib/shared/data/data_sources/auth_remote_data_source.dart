@@ -14,12 +14,10 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
   @override
   Future<Response> getRemoteAccessToken() async {
-    _dio.options.headers['Content-Type'] = 'application/json';
-    _dio.options.headers['Cache-Control'] = 'no-cache';
-    _dio.options.headers['Connection'] = 'keep-alive';
     return await _dio.post(
       '${Constants.iiKoBaseUrl}/api/1/access_token',
       data: {'apiLogin': Constants.iikoApiKey},
+      options: Options(headers: {'Content-Type': 'application/json'}),
     );
   }
 }

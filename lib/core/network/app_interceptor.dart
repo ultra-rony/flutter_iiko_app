@@ -8,8 +8,6 @@ class AppInterceptor extends Interceptor {
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    options.contentType = Headers.formUrlEncodedContentType;
-
     _logger.i('➡️ [${options.method}] ${options.uri}');
     _logger.i('Headers: ${options.headers}');
 
