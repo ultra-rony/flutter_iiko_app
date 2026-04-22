@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'auth_cubit.dart';
+part of 'nomenclature_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,7 +12,7 @@ part of 'auth_cubit.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$AuthState {
+mixin _$NomenclatureState {
 
 
 
@@ -20,7 +20,7 @@ mixin _$AuthState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AuthState);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NomenclatureState);
 }
 
 
@@ -29,20 +29,20 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'AuthState()';
+  return 'NomenclatureState()';
 }
 
 
 }
 
 /// @nodoc
-class $AuthStateCopyWith<$Res>  {
-$AuthStateCopyWith(AuthState _, $Res Function(AuthState) __);
+class $NomenclatureStateCopyWith<$Res>  {
+$NomenclatureStateCopyWith(NomenclatureState _, $Res Function(NomenclatureState) __);
 }
 
 
-/// Adds pattern-matching-related methods to [AuthState].
-extension AuthStatePatterns on AuthState {
+/// Adds pattern-matching-related methods to [NomenclatureState].
+extension NomenclatureStatePatterns on NomenclatureState {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -55,12 +55,12 @@ extension AuthStatePatterns on AuthState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( _Data value)?  data,TResult Function( _Error value)?  error,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( _Nomenclature value)?  nomenclature,TResult Function( _Error value)?  error,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that);case _Data() when data != null:
-return data(_that);case _Error() when error != null:
+return initial(_that);case _Nomenclature() when nomenclature != null:
+return nomenclature(_that);case _Error() when error != null:
 return error(_that);case _:
   return orElse();
 
@@ -79,12 +79,12 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( _Data value)  data,required TResult Function( _Error value)  error,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( _Nomenclature value)  nomenclature,required TResult Function( _Error value)  error,}){
 final _that = this;
 switch (_that) {
 case _Initial():
-return initial(_that);case _Data():
-return data(_that);case _Error():
+return initial(_that);case _Nomenclature():
+return nomenclature(_that);case _Error():
 return error(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -102,12 +102,12 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( _Data value)?  data,TResult? Function( _Error value)?  error,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( _Nomenclature value)?  nomenclature,TResult? Function( _Error value)?  error,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that);case _Data() when data != null:
-return data(_that);case _Error() when error != null:
+return initial(_that);case _Nomenclature() when nomenclature != null:
+return nomenclature(_that);case _Error() when error != null:
 return error(_that);case _:
   return null;
 
@@ -125,11 +125,11 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function( String? accessToken,  UserEntity? user)?  data,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function( NomenclatureEntity? nomenclature)?  nomenclature,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial();case _Data() when data != null:
-return data(_that.accessToken,_that.user);case _Error() when error != null:
+return initial();case _Nomenclature() when nomenclature != null:
+return nomenclature(_that.nomenclature);case _Error() when error != null:
 return error(_that.message);case _:
   return orElse();
 
@@ -148,11 +148,11 @@ return error(_that.message);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function( String? accessToken,  UserEntity? user)  data,required TResult Function( String message)  error,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function( NomenclatureEntity? nomenclature)  nomenclature,required TResult Function( String message)  error,}) {final _that = this;
 switch (_that) {
 case _Initial():
-return initial();case _Data():
-return data(_that.accessToken,_that.user);case _Error():
+return initial();case _Nomenclature():
+return nomenclature(_that.nomenclature);case _Error():
 return error(_that.message);case _:
   throw StateError('Unexpected subclass');
 
@@ -170,11 +170,11 @@ return error(_that.message);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function( String? accessToken,  UserEntity? user)?  data,TResult? Function( String message)?  error,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function( NomenclatureEntity? nomenclature)?  nomenclature,TResult? Function( String message)?  error,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial();case _Data() when data != null:
-return data(_that.accessToken,_that.user);case _Error() when error != null:
+return initial();case _Nomenclature() when nomenclature != null:
+return nomenclature(_that.nomenclature);case _Error() when error != null:
 return error(_that.message);case _:
   return null;
 
@@ -186,7 +186,7 @@ return error(_that.message);case _:
 /// @nodoc
 
 
-class _Initial implements AuthState {
+class _Initial implements NomenclatureState {
   const _Initial();
   
 
@@ -206,7 +206,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'AuthState.initial()';
+  return 'NomenclatureState.initial()';
 }
 
 
@@ -218,79 +218,77 @@ String toString() {
 /// @nodoc
 
 
-class _Data implements AuthState {
-  const _Data({this.accessToken, this.user});
+class _Nomenclature implements NomenclatureState {
+  const _Nomenclature({this.nomenclature});
   
 
- final  String? accessToken;
- final  UserEntity? user;
+ final  NomenclatureEntity? nomenclature;
 
-/// Create a copy of AuthState
+/// Create a copy of NomenclatureState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$DataCopyWith<_Data> get copyWith => __$DataCopyWithImpl<_Data>(this, _$identity);
+_$NomenclatureCopyWith<_Nomenclature> get copyWith => __$NomenclatureCopyWithImpl<_Nomenclature>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Data&&(identical(other.accessToken, accessToken) || other.accessToken == accessToken)&&(identical(other.user, user) || other.user == user));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Nomenclature&&(identical(other.nomenclature, nomenclature) || other.nomenclature == nomenclature));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,accessToken,user);
+int get hashCode => Object.hash(runtimeType,nomenclature);
 
 @override
 String toString() {
-  return 'AuthState.data(accessToken: $accessToken, user: $user)';
+  return 'NomenclatureState.nomenclature(nomenclature: $nomenclature)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$DataCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
-  factory _$DataCopyWith(_Data value, $Res Function(_Data) _then) = __$DataCopyWithImpl;
+abstract mixin class _$NomenclatureCopyWith<$Res> implements $NomenclatureStateCopyWith<$Res> {
+  factory _$NomenclatureCopyWith(_Nomenclature value, $Res Function(_Nomenclature) _then) = __$NomenclatureCopyWithImpl;
 @useResult
 $Res call({
- String? accessToken, UserEntity? user
+ NomenclatureEntity? nomenclature
 });
 
 
-$UserEntityCopyWith<$Res>? get user;
+$NomenclatureEntityCopyWith<$Res>? get nomenclature;
 
 }
 /// @nodoc
-class __$DataCopyWithImpl<$Res>
-    implements _$DataCopyWith<$Res> {
-  __$DataCopyWithImpl(this._self, this._then);
+class __$NomenclatureCopyWithImpl<$Res>
+    implements _$NomenclatureCopyWith<$Res> {
+  __$NomenclatureCopyWithImpl(this._self, this._then);
 
-  final _Data _self;
-  final $Res Function(_Data) _then;
+  final _Nomenclature _self;
+  final $Res Function(_Nomenclature) _then;
 
-/// Create a copy of AuthState
+/// Create a copy of NomenclatureState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? accessToken = freezed,Object? user = freezed,}) {
-  return _then(_Data(
-accessToken: freezed == accessToken ? _self.accessToken : accessToken // ignore: cast_nullable_to_non_nullable
-as String?,user: freezed == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
-as UserEntity?,
+@pragma('vm:prefer-inline') $Res call({Object? nomenclature = freezed,}) {
+  return _then(_Nomenclature(
+nomenclature: freezed == nomenclature ? _self.nomenclature : nomenclature // ignore: cast_nullable_to_non_nullable
+as NomenclatureEntity?,
   ));
 }
 
-/// Create a copy of AuthState
+/// Create a copy of NomenclatureState
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UserEntityCopyWith<$Res>? get user {
-    if (_self.user == null) {
+$NomenclatureEntityCopyWith<$Res>? get nomenclature {
+    if (_self.nomenclature == null) {
     return null;
   }
 
-  return $UserEntityCopyWith<$Res>(_self.user!, (value) {
-    return _then(_self.copyWith(user: value));
+  return $NomenclatureEntityCopyWith<$Res>(_self.nomenclature!, (value) {
+    return _then(_self.copyWith(nomenclature: value));
   });
 }
 }
@@ -298,13 +296,13 @@ $UserEntityCopyWith<$Res>? get user {
 /// @nodoc
 
 
-class _Error implements AuthState {
-  const _Error({required this.message});
+class _Error implements NomenclatureState {
+  const _Error(this.message);
   
 
  final  String message;
 
-/// Create a copy of AuthState
+/// Create a copy of NomenclatureState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -323,14 +321,14 @@ int get hashCode => Object.hash(runtimeType,message);
 
 @override
 String toString() {
-  return 'AuthState.error(message: $message)';
+  return 'NomenclatureState.error(message: $message)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$ErrorCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
+abstract mixin class _$ErrorCopyWith<$Res> implements $NomenclatureStateCopyWith<$Res> {
   factory _$ErrorCopyWith(_Error value, $Res Function(_Error) _then) = __$ErrorCopyWithImpl;
 @useResult
 $Res call({
@@ -349,11 +347,11 @@ class __$ErrorCopyWithImpl<$Res>
   final _Error _self;
   final $Res Function(_Error) _then;
 
-/// Create a copy of AuthState
+/// Create a copy of NomenclatureState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
   return _then(_Error(
-message: null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }

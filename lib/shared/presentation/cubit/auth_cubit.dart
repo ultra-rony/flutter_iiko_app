@@ -13,18 +13,19 @@ part 'auth_cubit.freezed.dart';
 class AuthCubit extends Cubit<AuthState> {
   final GetAccessTokenUseCase _accessTokenUseCase;
 
-  AuthCubit(this._accessTokenUseCase) : super(const AuthState());
+  AuthCubit(this._accessTokenUseCase) : super(const _Initial());
 
   Future<void> init() async {
     try {
       final resp = await _accessTokenUseCase();
       if (resp != null) {
         Constants.accessToken = resp.token;
-        print("dsadssdads: ${Constants.accessToken}");
-        emit(state.copyWith(accessToken: resp.token));
+        emit(AuthState.data(accessToken: Constants.accessToken));
+      } else {
+        emit(const AuthState.error(message: 'No access token found'));
       }
     } catch (e) {
-      emit(state.copyWith(error: e.toString()));
+      emit(AuthState.error(message: e.toString()));
     }
   }
 }

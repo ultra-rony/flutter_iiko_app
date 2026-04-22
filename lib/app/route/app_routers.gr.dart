@@ -10,23 +10,23 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i3;
-import 'package:flutter_iiko_app/features/home/presentation/home_screen.dart'
+import 'package:flutter_iiko_app/features/nomenclature/presentation/pages/nomenclature_screen.dart'
     as _i1;
 import 'package:flutter_iiko_app/shared/presentation/pages/splash_page.dart'
     as _i2;
 
 /// generated route for
-/// [_i1.HomeScreen]
-class HomeRoute extends _i3.PageRouteInfo<void> {
-  const HomeRoute({List<_i3.PageRouteInfo>? children})
-    : super(HomeRoute.name, initialChildren: children);
+/// [_i1.NomenclatureScreen]
+class NomenclatureRoute extends _i3.PageRouteInfo<void> {
+  const NomenclatureRoute({List<_i3.PageRouteInfo>? children})
+    : super(NomenclatureRoute.name, initialChildren: children);
 
-  static const String name = 'HomeRoute';
+  static const String name = 'NomenclatureRoute';
 
   static _i3.PageInfo page = _i3.PageInfo(
     name,
     builder: (data) {
-      return const _i1.HomeScreen();
+      return _i3.WrappedRoute(child: const _i1.NomenclatureScreen());
     },
   );
 }

@@ -12,6 +12,16 @@
 import 'package:dio/dio.dart' as _i361;
 import 'package:flutter_iiko_app/core/bloc/app_bloc_observer.dart' as _i992;
 import 'package:flutter_iiko_app/core/di/register_modules.dart' as _i236;
+import 'package:flutter_iiko_app/features/nomenclature/data/data_sources/nomenclature_remote_data_source.dart'
+    as _i25;
+import 'package:flutter_iiko_app/features/nomenclature/data/repositories/nomenclature_repository_impl.dart'
+    as _i615;
+import 'package:flutter_iiko_app/features/nomenclature/domain/repositories/nomenclature_repository.dart'
+    as _i895;
+import 'package:flutter_iiko_app/features/nomenclature/domain/use_cases/get_remote_nomenclature_use_case.dart'
+    as _i907;
+import 'package:flutter_iiko_app/features/nomenclature/presentation/cubit/nomenclature_cubit.dart'
+    as _i165;
 import 'package:flutter_iiko_app/shared/data/data_sources/auth_local_data_source.dart'
     as _i819;
 import 'package:flutter_iiko_app/shared/data/data_sources/auth_remote_data_source.dart'
@@ -52,6 +62,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i837.AuthRemoteDataSource>(
       () => _i837.AuthRemoteDataSourceImpl(gh<_i361.Dio>()),
     );
+    gh.lazySingleton<_i25.NomenclatureRemoteDataSource>(
+      () => _i25.NomenclatureRemoteDataSourceImpl(gh<_i361.Dio>()),
+    );
+    gh.lazySingleton<_i895.NomenclatureRepository>(
+      () => _i615.NomenclatureRepositoryImpl(
+        gh<_i25.NomenclatureRemoteDataSource>(),
+      ),
+    );
     gh.lazySingleton<_i1009.AuthRepository>(
       () => _i93.AuthRepositoryImpl(
         gh<_i819.AuthLocalDataSource>(),
@@ -64,8 +82,16 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i974.Logger>(),
       ),
     );
+    gh.factory<_i907.GetRemoteNomenclatureUseCase>(
+      () => _i907.GetRemoteNomenclatureUseCase(
+        gh<_i895.NomenclatureRepository>(),
+      ),
+    );
     gh.lazySingleton<_i467.AuthCubit>(
       () => _i467.AuthCubit(gh<_i60.GetAccessTokenUseCase>()),
+    );
+    gh.lazySingleton<_i165.NomenclatureCubit>(
+      () => _i165.NomenclatureCubit(gh<_i907.GetRemoteNomenclatureUseCase>()),
     );
     return this;
   }

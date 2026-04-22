@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_iiko_app/core/utils/constants.dart';
 import 'package:logger/logger.dart';
 
 class AppInterceptor extends Interceptor {
@@ -8,6 +9,11 @@ class AppInterceptor extends Interceptor {
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
+
+    if (Constants.accessToken != null && Constants.accessToken!.isNotEmpty) {
+      options.headers['Authorization'] = 'Bearer ${Constants.accessToken}';
+    }
+
     _logger.i('➡️ [${options.method}] ${options.uri}');
     _logger.i('Headers: ${options.headers}');
 
