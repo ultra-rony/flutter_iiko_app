@@ -9,6 +9,7 @@ class AppInterceptor extends Interceptor {
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
+    options.headers['Content-Type'] = 'application/json';
 
     if (Constants.accessToken != null && Constants.accessToken!.isNotEmpty) {
       options.headers['Authorization'] = 'Bearer ${Constants.accessToken}';

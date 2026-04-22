@@ -125,11 +125,11 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function( String? accessToken,  UserEntity? user)?  data,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function( String? accessToken,  UserEntity? user,  String? organizationId)?  data,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case _Data() when data != null:
-return data(_that.accessToken,_that.user);case _Error() when error != null:
+return data(_that.accessToken,_that.user,_that.organizationId);case _Error() when error != null:
 return error(_that.message);case _:
   return orElse();
 
@@ -148,11 +148,11 @@ return error(_that.message);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function( String? accessToken,  UserEntity? user)  data,required TResult Function( String message)  error,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function( String? accessToken,  UserEntity? user,  String? organizationId)  data,required TResult Function( String message)  error,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case _Data():
-return data(_that.accessToken,_that.user);case _Error():
+return data(_that.accessToken,_that.user,_that.organizationId);case _Error():
 return error(_that.message);case _:
   throw StateError('Unexpected subclass');
 
@@ -170,11 +170,11 @@ return error(_that.message);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function( String? accessToken,  UserEntity? user)?  data,TResult? Function( String message)?  error,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function( String? accessToken,  UserEntity? user,  String? organizationId)?  data,TResult? Function( String message)?  error,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case _Data() when data != null:
-return data(_that.accessToken,_that.user);case _Error() when error != null:
+return data(_that.accessToken,_that.user,_that.organizationId);case _Error() when error != null:
 return error(_that.message);case _:
   return null;
 
@@ -219,11 +219,12 @@ String toString() {
 
 
 class _Data implements AuthState {
-  const _Data({this.accessToken, this.user});
+  const _Data({this.accessToken, this.user, this.organizationId});
   
 
  final  String? accessToken;
  final  UserEntity? user;
+ final  String? organizationId;
 
 /// Create a copy of AuthState
 /// with the given fields replaced by the non-null parameter values.
@@ -235,16 +236,16 @@ _$DataCopyWith<_Data> get copyWith => __$DataCopyWithImpl<_Data>(this, _$identit
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Data&&(identical(other.accessToken, accessToken) || other.accessToken == accessToken)&&(identical(other.user, user) || other.user == user));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Data&&(identical(other.accessToken, accessToken) || other.accessToken == accessToken)&&(identical(other.user, user) || other.user == user)&&(identical(other.organizationId, organizationId) || other.organizationId == organizationId));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,accessToken,user);
+int get hashCode => Object.hash(runtimeType,accessToken,user,organizationId);
 
 @override
 String toString() {
-  return 'AuthState.data(accessToken: $accessToken, user: $user)';
+  return 'AuthState.data(accessToken: $accessToken, user: $user, organizationId: $organizationId)';
 }
 
 
@@ -255,7 +256,7 @@ abstract mixin class _$DataCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
   factory _$DataCopyWith(_Data value, $Res Function(_Data) _then) = __$DataCopyWithImpl;
 @useResult
 $Res call({
- String? accessToken, UserEntity? user
+ String? accessToken, UserEntity? user, String? organizationId
 });
 
 
@@ -272,11 +273,12 @@ class __$DataCopyWithImpl<$Res>
 
 /// Create a copy of AuthState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? accessToken = freezed,Object? user = freezed,}) {
+@pragma('vm:prefer-inline') $Res call({Object? accessToken = freezed,Object? user = freezed,Object? organizationId = freezed,}) {
   return _then(_Data(
 accessToken: freezed == accessToken ? _self.accessToken : accessToken // ignore: cast_nullable_to_non_nullable
 as String?,user: freezed == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
-as UserEntity?,
+as UserEntity?,organizationId: freezed == organizationId ? _self.organizationId : organizationId // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 

@@ -4,6 +4,8 @@ import 'package:injectable/injectable.dart';
 
 abstract class AuthRemoteDataSource {
   Future<Response> getRemoteAccessToken();
+
+  Future<Response> getOrganizations();
 }
 
 @LazySingleton(as: AuthRemoteDataSource)
@@ -17,7 +19,14 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     return await _dio.post(
       '${Constants.iiKoBaseUrl}/api/1/access_token',
       data: {'apiLogin': Constants.iikoApiKey},
-      options: Options(headers: {'Content-Type': 'application/json'}),
+    );
+  }
+
+  @override
+  Future<Response<dynamic>> getOrganizations() async {
+    return await _dio.post(
+      '${Constants.iiKoBaseUrl}/api/1/organizations',
+      data: {},
     );
   }
 }

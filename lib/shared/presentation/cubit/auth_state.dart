@@ -4,7 +4,11 @@ part of 'auth_cubit.dart';
 abstract class AuthState with _$AuthState {
   const factory AuthState.initial() = _Initial;
 
-  const factory AuthState.data({String? accessToken, UserEntity? user}) = _Data;
+  const factory AuthState.data({
+    String? accessToken,
+    UserEntity? user,
+    String? organizationId,
+  }) = _Data;
 
   const factory AuthState.error({required String message}) = _Error;
 }

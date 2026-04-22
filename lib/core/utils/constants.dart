@@ -4,5 +4,6 @@ class Constants {
   static String iiKoBaseUrl = "https://api-ru.iiko.services";
   static String? iikoApiKey = dotenv.env['IIKO_API_KEY'];
   static String? accessToken;
+  static String? organizationId;
   static String currency = "₽";
 }

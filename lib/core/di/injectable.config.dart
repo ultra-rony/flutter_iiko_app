@@ -32,6 +32,8 @@ import 'package:flutter_iiko_app/shared/domain/repositories/auth_repository.dart
     as _i1009;
 import 'package:flutter_iiko_app/shared/domain/use_cases/get_access_token_use_case.dart'
     as _i60;
+import 'package:flutter_iiko_app/shared/domain/use_cases/get_remote_organizations_use_case.dart'
+    as _i158;
 import 'package:flutter_iiko_app/shared/presentation/cubit/auth_cubit.dart'
     as _i467;
 import 'package:get_it/get_it.dart' as _i174;
@@ -76,6 +78,9 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i837.AuthRemoteDataSource>(),
       ),
     );
+    gh.factory<_i158.GetRemoteOrganizationsUseCase>(
+      () => _i158.GetRemoteOrganizationsUseCase(gh<_i1009.AuthRepository>()),
+    );
     gh.factory<_i60.GetAccessTokenUseCase>(
       () => _i60.GetAccessTokenUseCase(
         gh<_i1009.AuthRepository>(),
@@ -88,7 +93,10 @@ extension GetItInjectableX on _i174.GetIt {
       ),
     );
     gh.lazySingleton<_i467.AuthCubit>(
-      () => _i467.AuthCubit(gh<_i60.GetAccessTokenUseCase>()),
+      () => _i467.AuthCubit(
+        gh<_i60.GetAccessTokenUseCase>(),
+        gh<_i158.GetRemoteOrganizationsUseCase>(),
+      ),
     );
     gh.lazySingleton<_i165.NomenclatureCubit>(
       () => _i165.NomenclatureCubit(gh<_i907.GetRemoteNomenclatureUseCase>()),
