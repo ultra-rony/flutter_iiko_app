@@ -16,7 +16,7 @@ class NomenclatureRemoteDataSourceImpl implements NomenclatureRemoteDataSource {
   Future<Response<dynamic>> getNomenclature() async {
     return await _dio.post(
       "${Constants.iiKoBaseUrl}/api/1/nomenclature",
-      data: {"organizationId": "2adb38f4-39ee-4d98-851a-fd2b4a58236d"},
+      data: {"organizationId": Constants.organizationId},
     );
   }
 }
