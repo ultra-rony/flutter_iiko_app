@@ -1,17 +1,55 @@
-# flutter_iiko_app
+# 🍽️ Flutter iiko API App
+# Coming soon...
 
-A new Flutter project.
+An open-source Flutter application for integrating with the **iiko Cloud API**.  
+This project is currently **under active development** and aims to provide a modern, clean example of how to build restaurant management and ordering apps using Flutter and iiko.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚧 Project Status
 
-A few resources to get you started if this is your first Flutter project:
+⚠️ **This project is currently in development**
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Core features are being implemented step by step. Expect frequent updates and structural changes.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# flutter_iiko_app
+---
+
+## ✨ Planned Features
+
+- 🔐 Authentication with iiko Cloud API
+- 🏢 Organization & restaurant selection
+- 📋 Menu fetching (categories, products, modifiers)
+- 🛒 Cart & order creation
+- 📤 Sending orders to iiko system
+- 📦 Order tracking & status updates
+- 👥 Multi-organization support
+- 🌐 Clean and scalable architecture
+- 📱 Responsive UI for mobile devices
+
+---
+
+## 📱 Screenshots
+
+> Coming soon...
+
+---
+
+## 🧱 Tech Stack
+
+- Flutter (latest stable)
+- Dart
+- REST API (iiko Cloud API)
+- Dio / Http client
+- State Management (TBD: BLoC / Riverpod / Provider)
+- JSON serialization
+- Environment configuration (.env)
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/flutter-iiko-api-app.git
+cd flutter-iiko-api-app
