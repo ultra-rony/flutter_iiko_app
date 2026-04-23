@@ -1,5 +1,3 @@
-
-
 import 'package:flutter_iiko_app/features/nomenclature/data/models/child/child_modifier_model.dart';
 import 'package:flutter_iiko_app/features/nomenclature/data/models/group/group_model.dart';
 import 'package:flutter_iiko_app/features/nomenclature/data/models/group/group_modifier_model.dart';
@@ -10,16 +8,16 @@ import 'package:flutter_iiko_app/features/nomenclature/data/models/product_categ
 import 'package:flutter_iiko_app/features/nomenclature/data/models/product/product_model.dart';
 import 'package:flutter_iiko_app/features/nomenclature/data/models/size/size_model.dart';
 import 'package:flutter_iiko_app/features/nomenclature/data/models/size/size_price_model.dart';
-import 'package:flutter_iiko_app/features/nomenclature/domain/entities/group/group_modifier_entity.dart';
 import 'package:flutter_iiko_app/features/nomenclature/domain/entities/child/child_modifier_entity.dart';
 import 'package:flutter_iiko_app/features/nomenclature/domain/entities/group/group_entity.dart';
-import 'package:flutter_iiko_app/features/nomenclature/domain/entities/modifier/modifier_entity.dart';
 import 'package:flutter_iiko_app/features/nomenclature/domain/entities/nomenclature/nomenclature_entity.dart';
-import 'package:flutter_iiko_app/features/nomenclature/domain/entities/price/price_entity.dart';
 import 'package:flutter_iiko_app/features/nomenclature/domain/entities/product_category/product_category_entity.dart';
-import 'package:flutter_iiko_app/features/nomenclature/domain/entities/product/product_entity.dart';
 import 'package:flutter_iiko_app/features/nomenclature/domain/entities/size/size_entity.dart';
-import 'package:flutter_iiko_app/features/nomenclature/domain/entities/size/size_price_entity.dart';
+import 'package:flutter_iiko_app/shared/domain/entities/group/group_modifier_entity.dart';
+import 'package:flutter_iiko_app/shared/domain/entities/modifier/modifier_entity.dart';
+import 'package:flutter_iiko_app/shared/domain/entities/price/price_entity.dart';
+import 'package:flutter_iiko_app/shared/domain/entities/product/product_entity.dart';
+import 'package:flutter_iiko_app/shared/domain/entities/size/size_price_entity.dart';
 
 extension NomenclatureModelMapper on NomenclatureModel {
   NomenclatureEntity toEntity() {

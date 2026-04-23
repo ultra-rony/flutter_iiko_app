@@ -10,6 +10,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:dio/dio.dart' as _i361;
+import 'package:flutter/material.dart' as _i409;
 import 'package:flutter_iiko_app/core/bloc/app_bloc_observer.dart' as _i992;
 import 'package:flutter_iiko_app/core/di/register_modules.dart' as _i236;
 import 'package:flutter_iiko_app/features/nomenclature/data/data_sources/nomenclature_remote_data_source.dart'
@@ -30,6 +31,8 @@ import 'package:flutter_iiko_app/features/product_info/domain/repositories/produ
     as _i1052;
 import 'package:flutter_iiko_app/features/product_info/presentation/cubit/product_info_cubit.dart'
     as _i565;
+import 'package:flutter_iiko_app/features/product_info/presentation/pages/product_info_page.dart'
+    as _i1026;
 import 'package:flutter_iiko_app/shared/data/data_sources/auth_local_data_source.dart'
     as _i819;
 import 'package:flutter_iiko_app/shared/data/data_sources/auth_remote_data_source.dart'
@@ -65,6 +68,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i565.ProductInfoCubit>(() => _i565.ProductInfoCubit());
     gh.lazySingleton<_i819.AuthLocalDataSource>(
       () => _i819.AuthLocalDataSourceImpl(gh<_i779.Database>()),
+    );
+    gh.lazySingleton<_i1026.ProductInfoPage>(
+      () => _i1026.ProductInfoPage(key: gh<_i409.Key>()),
     );
     gh.lazySingleton<_i992.AppBlocObserver>(
       () => registerModule.blocObserver(gh<_i974.Logger>()),

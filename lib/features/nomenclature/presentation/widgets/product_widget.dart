@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iiko_app/core/utils/constants.dart';
-import 'package:flutter_iiko_app/features/nomenclature/domain/entities/product/product_entity.dart';
+import 'package:flutter_iiko_app/shared/domain/entities/product/product_entity.dart';
 
 class ProductWidget extends StatefulWidget {
   final ProductEntity? product;
