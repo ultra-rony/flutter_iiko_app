@@ -22,6 +22,14 @@ import 'package:flutter_iiko_app/features/nomenclature/domain/use_cases/get_remo
     as _i907;
 import 'package:flutter_iiko_app/features/nomenclature/presentation/cubit/nomenclature_cubit.dart'
     as _i165;
+import 'package:flutter_iiko_app/features/product_info/data/data_sources/product_info_remote_data_source.dart'
+    as _i316;
+import 'package:flutter_iiko_app/features/product_info/data/repositories/product_info_repository_impl.dart'
+    as _i311;
+import 'package:flutter_iiko_app/features/product_info/domain/repositories/product_info_repository.dart'
+    as _i1052;
+import 'package:flutter_iiko_app/features/product_info/presentation/cubit/product_info_cubit.dart'
+    as _i565;
 import 'package:flutter_iiko_app/shared/data/data_sources/auth_local_data_source.dart'
     as _i819;
 import 'package:flutter_iiko_app/shared/data/data_sources/auth_remote_data_source.dart'
@@ -54,6 +62,7 @@ extension GetItInjectableX on _i174.GetIt {
       preResolve: true,
     );
     gh.lazySingleton<_i974.Logger>(() => registerModule.logger);
+    gh.lazySingleton<_i565.ProductInfoCubit>(() => _i565.ProductInfoCubit());
     gh.lazySingleton<_i819.AuthLocalDataSource>(
       () => _i819.AuthLocalDataSourceImpl(gh<_i779.Database>()),
     );
@@ -64,8 +73,16 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i837.AuthRemoteDataSource>(
       () => _i837.AuthRemoteDataSourceImpl(gh<_i361.Dio>()),
     );
+    gh.lazySingleton<_i316.ProductInfoRemoteDataSource>(
+      () => _i316.ProductInfoRemoteDataSourceImpl(gh<_i361.Dio>()),
+    );
     gh.lazySingleton<_i25.NomenclatureRemoteDataSource>(
       () => _i25.NomenclatureRemoteDataSourceImpl(gh<_i361.Dio>()),
+    );
+    gh.lazySingleton<_i1052.ProductInfoRepository>(
+      () => _i311.ProductInfoRepositoryImpl(
+        gh<_i316.ProductInfoRemoteDataSource>(),
+      ),
     );
     gh.lazySingleton<_i895.NomenclatureRepository>(
       () => _i615.NomenclatureRepositoryImpl(

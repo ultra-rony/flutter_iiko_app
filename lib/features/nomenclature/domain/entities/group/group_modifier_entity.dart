@@ -1,6 +1,5 @@
+import 'package:flutter_iiko_app/features/nomenclature/domain/entities/child/child_modifier_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import 'child_modifier_entity.dart';
 
 part 'group_modifier_entity.freezed.dart';
 

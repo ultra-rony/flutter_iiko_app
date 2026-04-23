@@ -1,9 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'group_entity.dart';
-import 'product_category_entity.dart';
-import 'product_entity.dart';
-import 'size_entity.dart';
+import '../group/group_entity.dart';
+import '../product_category/product_category_entity.dart';
+import '../product/product_entity.dart';
+import '../size/size_entity.dart';
 
 part 'nomenclature_entity.freezed.dart';
 
