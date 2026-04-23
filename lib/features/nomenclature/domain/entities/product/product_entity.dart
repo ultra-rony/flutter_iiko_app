@@ -2,7 +2,7 @@ import 'package:flutter_iiko_app/features/nomenclature/domain/entities/group/gro
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../modifier/modifier_entity.dart';
-import '../price/size_price_entity.dart';
+import '../size/size_price_entity.dart';
 
 part 'product_entity.freezed.dart';
 

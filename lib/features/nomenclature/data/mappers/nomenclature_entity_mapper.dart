@@ -19,7 +19,7 @@ import 'package:flutter_iiko_app/features/nomenclature/domain/entities/price/pri
 import 'package:flutter_iiko_app/features/nomenclature/domain/entities/product_category/product_category_entity.dart';
 import 'package:flutter_iiko_app/features/nomenclature/domain/entities/product/product_entity.dart';
 import 'package:flutter_iiko_app/features/nomenclature/domain/entities/size/size_entity.dart';
-import 'package:flutter_iiko_app/features/nomenclature/domain/entities/price/size_price_entity.dart';
+import 'package:flutter_iiko_app/features/nomenclature/domain/entities/size/size_price_entity.dart';
 
 extension NomenclatureModelMapper on NomenclatureModel {
   NomenclatureEntity toEntity() {
