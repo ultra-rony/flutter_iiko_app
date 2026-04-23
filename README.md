@@ -1,55 +1,81 @@
-# 🍽️ Flutter iiko API App
-# Coming soon...
+# 🍽️ Flutter iiko Cloud API App
 
-An open-source Flutter application for integrating with the **iiko Cloud API**.  
-This project is currently **under active development** and aims to provide a modern, clean example of how to build restaurant management and ordering apps using Flutter and iiko.
+A modern **Flutter-based client** for integrating with the **iiko Cloud REST API**.  
+This project demonstrates how to build a scalable restaurant ordering and management app using clean architecture and Flutter best practices.
 
----
-
-## 🚧 Project Status
-
-⚠️ **This project is currently in development**
-
-Core features are being implemented step by step. Expect frequent updates and structural changes.
+> ⚠️ Project is currently under active development. Features and structure may change frequently.
 
 ---
 
-## ✨ Planned Features
+## 🚧 Status
 
-- 🔐 Authentication with iiko Cloud API
-- 🏢 Organization & restaurant selection
-- 📋 Menu fetching (categories, products, modifiers)
-- 🛒 Cart & order creation
-- 📤 Sending orders to iiko system
-- 📦 Order tracking & status updates
-- 👥 Multi-organization support
-- 🌐 Clean and scalable architecture
-- 📱 Responsive UI for mobile devices
+![Status](https://img.shields.io/badge/status-in%20development-yellow)
+![Flutter](https://img.shields.io/badge/Flutter-latest-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+Core functionality is being implemented step by step:
+- Authentication flow
+- Menu system
+- Order management
+- API integration layer
 
 ---
 
-## 📱 Screenshots
+## ✨ Features (Planned)
 
-> Coming soon...
+### 🔐 Authentication
+- iiko Cloud API authentication
+- Token management & refresh
+
+### 🏢 Organization
+- Fetch organizations
+- Select restaurant / terminal
+
+### 📋 Menu System
+- Categories & products
+- Modifiers & combo support
+- Dynamic menu updates
+
+### 🛒 Cart & Orders
+- Add/remove items
+- Customizable orders
+- Price calculation
+
+### 📤 Order Processing
+- Send orders to iiko Cloud
+- Track order status in real time
+
+### 📦 Order Tracking
+- Live order updates
+- Status history
+
+### 🌐 Architecture
+- Clean Architecture principles
+- Scalable project structure
+- Environment-based configuration (.env support)
 
 ---
 
 ## 🧱 Tech Stack
 
-- Flutter (latest stable)
-- Dart
-- REST API (iiko Cloud API)
-- Dio / Http client
+- **Flutter** (latest stable)
+- **Dart**
+- **iiko Cloud REST API**  
+  https://api-ru.iiko.services/docs
+- **Dio / Http**
 - State Management (TBD: BLoC / Riverpod / Provider)
-- JSON serialization
-- Environment configuration (.env)
+- JSON serialization (json_serializable)
+- Environment configs (.env / flutter_dotenv)
 
 ---
 
-## ⚙️ Getting Started
-
-### 1. Clone the repository
+## 📁 Project Structure (Planned)
 
 ```bash
-git clone https://github.com/your-username/flutter-iiko-api-app.git
-cd flutter-iiko-api-app
+lib/
+ ├── app/              # App entry, router, DI, theme, config
+ ├── core/             # Shared low-level logic (errors, utils, network, constants)
+ ├── features/         # Feature-based modules (auth, menu, orders, etc.)
+ ├── shared/           # Reusable UI components (buttons, widgets, etc.)
+ └── main.dart
+```
