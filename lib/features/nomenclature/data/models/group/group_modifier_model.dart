@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'child_modifier_model.dart';
+import '../child/child_modifier_model.dart';
 
 part 'group_modifier_model.g.dart';
 

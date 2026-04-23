@@ -1,15 +1,15 @@
 
 
-import 'package:flutter_iiko_app/features/nomenclature/data/models/child_modifier_model.dart';
-import 'package:flutter_iiko_app/features/nomenclature/data/models/group_model.dart';
-import 'package:flutter_iiko_app/features/nomenclature/data/models/group_modifier_model.dart';
-import 'package:flutter_iiko_app/features/nomenclature/data/models/modifier_model.dart';
-import 'package:flutter_iiko_app/features/nomenclature/data/models/nomenclature_model.dart';
-import 'package:flutter_iiko_app/features/nomenclature/data/models/price_model.dart';
-import 'package:flutter_iiko_app/features/nomenclature/data/models/product_category_model.dart';
-import 'package:flutter_iiko_app/features/nomenclature/data/models/product_model.dart';
-import 'package:flutter_iiko_app/features/nomenclature/data/models/size_model.dart';
-import 'package:flutter_iiko_app/features/nomenclature/data/models/size_price_model.dart';
+import 'package:flutter_iiko_app/features/nomenclature/data/models/child/child_modifier_model.dart';
+import 'package:flutter_iiko_app/features/nomenclature/data/models/group/group_model.dart';
+import 'package:flutter_iiko_app/features/nomenclature/data/models/group/group_modifier_model.dart';
+import 'package:flutter_iiko_app/features/nomenclature/data/models/modifier/modifier_model.dart';
+import 'package:flutter_iiko_app/features/nomenclature/data/models/nomenclature/nomenclature_model.dart';
+import 'package:flutter_iiko_app/features/nomenclature/data/models/price/price_model.dart';
+import 'package:flutter_iiko_app/features/nomenclature/data/models/product_category/product_category_model.dart';
+import 'package:flutter_iiko_app/features/nomenclature/data/models/product/product_model.dart';
+import 'package:flutter_iiko_app/features/nomenclature/data/models/size/size_model.dart';
+import 'package:flutter_iiko_app/features/nomenclature/data/models/size/size_price_model.dart';
 import 'package:flutter_iiko_app/features/nomenclature/domain/entities/group/group_modifier_entity.dart';
 import 'package:flutter_iiko_app/features/nomenclature/domain/entities/child/child_modifier_entity.dart';
 import 'package:flutter_iiko_app/features/nomenclature/domain/entities/group/group_entity.dart';

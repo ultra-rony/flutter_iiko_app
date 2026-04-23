@@ -1,6 +1,6 @@
 import 'package:flutter_iiko_app/features/nomenclature/data/mappers/nomenclature_entity_mapper.dart';
 import 'package:flutter_iiko_app/features/nomenclature/data/mappers/nomenclature_model_mapper.dart';
-import 'package:flutter_iiko_app/features/nomenclature/data/models/nomenclature_model.dart';
+import 'package:flutter_iiko_app/features/nomenclature/data/models/nomenclature/nomenclature_model.dart';
 import 'package:flutter_iiko_app/features/nomenclature/domain/entities/nomenclature/nomenclature_entity.dart';
 import 'package:flutter_iiko_app/features/nomenclature/domain/use_cases/get_remote_nomenclature_use_case.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

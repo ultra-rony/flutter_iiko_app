@@ -1,8 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'group_modifier_model.dart';
-import 'modifier_model.dart';
-import 'size_price_model.dart';
+import '../group/group_modifier_model.dart';
+import '../modifier/modifier_model.dart';
+import '../size/size_price_model.dart';
 
 part 'product_model.g.dart';
 
