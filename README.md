@@ -63,7 +63,7 @@ Core functionality is being implemented step by step:
 - **iiko Cloud REST API**  
   https://api-ru.iiko.services/docs
 - **Dio / Http**
-- State Management (TBD: BLoC / Riverpod / Provider)
+- State Management (TBD: BLoC)
 - JSON serialization (json_serializable)
 - Environment configs (.env / flutter_dotenv)
 
