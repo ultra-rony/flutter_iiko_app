@@ -1,8 +1,7 @@
+import 'package:flutter_iiko_app/shared/data/models/group/group_modifier_model.dart';
+import 'package:flutter_iiko_app/shared/data/models/modifier/modifier_model.dart';
+import 'package:flutter_iiko_app/shared/data/models/size/size_price_model.dart';
 import 'package:json_annotation/json_annotation.dart';
-
-import '../group/group_modifier_model.dart';
-import '../modifier/modifier_model.dart';
-import '../size/size_price_model.dart';
 
 part 'product_model.g.dart';
 

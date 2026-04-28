@@ -1,4 +1,4 @@
-import 'package:flutter_iiko_app/features/nomenclature/data/models/price/price_model.dart';
+import 'package:flutter_iiko_app/shared/data/models/price/price_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'size_price_model.g.dart';

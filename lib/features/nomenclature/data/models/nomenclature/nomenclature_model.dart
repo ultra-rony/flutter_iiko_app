@@ -1,8 +1,8 @@
+import 'package:flutter_iiko_app/shared/data/models/product/product_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../group/group_model.dart';
 import '../product_category/product_category_model.dart';
-import '../product/product_model.dart';
 import '../size/size_model.dart';
 
 part 'nomenclature_model.g.dart';
