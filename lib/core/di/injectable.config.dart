@@ -12,6 +12,14 @@
 import 'package:dio/dio.dart' as _i361;
 import 'package:flutter_iiko_app/core/bloc/app_bloc_observer.dart' as _i992;
 import 'package:flutter_iiko_app/core/di/register_modules.dart' as _i236;
+import 'package:flutter_iiko_app/features/cart/data/data_sources/cart_remote_data_source.dart'
+    as _i638;
+import 'package:flutter_iiko_app/features/cart/data/repositories/cart_repository_impl.dart'
+    as _i696;
+import 'package:flutter_iiko_app/features/cart/domain/repositories/cart_repository.dart'
+    as _i566;
+import 'package:flutter_iiko_app/features/cart/presentation/cubit/cart_cubit.dart'
+    as _i787;
 import 'package:flutter_iiko_app/features/nomenclature/data/data_sources/nomenclature_remote_data_source.dart'
     as _i25;
 import 'package:flutter_iiko_app/features/nomenclature/data/repositories/nomenclature_repository_impl.dart'
@@ -62,6 +70,7 @@ extension GetItInjectableX on _i174.GetIt {
       preResolve: true,
     );
     gh.lazySingleton<_i974.Logger>(() => registerModule.logger);
+    gh.lazySingleton<_i787.CartCubit>(() => _i787.CartCubit());
     gh.lazySingleton<_i565.ProductInfoCubit>(() => _i565.ProductInfoCubit());
     gh.lazySingleton<_i819.AuthLocalDataSource>(
       () => _i819.AuthLocalDataSourceImpl(gh<_i779.Database>()),
@@ -79,6 +88,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i25.NomenclatureRemoteDataSource>(
       () => _i25.NomenclatureRemoteDataSourceImpl(gh<_i361.Dio>()),
     );
+    gh.lazySingleton<_i638.CartRemoteDataSource>(
+      () => _i638.CartRemoteDataSourceImpl(gh<_i361.Dio>()),
+    );
     gh.lazySingleton<_i1052.ProductInfoRepository>(
       () => _i311.ProductInfoRepositoryImpl(
         gh<_i316.ProductInfoRemoteDataSource>(),
@@ -88,6 +100,9 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i615.NomenclatureRepositoryImpl(
         gh<_i25.NomenclatureRemoteDataSource>(),
       ),
+    );
+    gh.lazySingleton<_i566.CartRepository>(
+      () => _i696.CartRepositoryImpl(gh<_i638.CartRemoteDataSource>()),
     );
     gh.lazySingleton<_i1009.AuthRepository>(
       () => _i93.AuthRepositoryImpl(
