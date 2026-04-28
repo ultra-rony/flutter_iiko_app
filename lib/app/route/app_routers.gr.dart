@@ -10,10 +10,13 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i4;
+import 'package:flutter/material.dart' as _i5;
 import 'package:flutter_iiko_app/features/nomenclature/presentation/pages/nomenclature_screen.dart'
     as _i1;
 import 'package:flutter_iiko_app/features/product_info/presentation/pages/product_info_page.dart'
     as _i2;
+import 'package:flutter_iiko_app/shared/domain/entities/product/product_entity.dart'
+    as _i6;
 import 'package:flutter_iiko_app/shared/presentation/pages/splash_page.dart'
     as _i3;
 
@@ -35,18 +38,53 @@ class NomenclatureRoute extends _i4.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.ProductInfoPage]
-class ProductInfoRoute extends _i4.PageRouteInfo<void> {
-  const ProductInfoRoute({List<_i4.PageRouteInfo>? children})
-    : super(ProductInfoRoute.name, initialChildren: children);
+class ProductInfoRoute extends _i4.PageRouteInfo<ProductInfoRouteArgs> {
+  ProductInfoRoute({
+    _i5.Key? key,
+    _i6.ProductEntity? product,
+    List<_i4.PageRouteInfo>? children,
+  }) : super(
+         ProductInfoRoute.name,
+         args: ProductInfoRouteArgs(key: key, product: product),
+         initialChildren: children,
+       );
 
   static const String name = 'ProductInfoRoute';
 
   static _i4.PageInfo page = _i4.PageInfo(
     name,
     builder: (data) {
-      return _i4.WrappedRoute(child: const _i2.ProductInfoPage());
+      final args = data.argsAs<ProductInfoRouteArgs>(
+        orElse: () => const ProductInfoRouteArgs(),
+      );
+      return _i4.WrappedRoute(
+        child: _i2.ProductInfoPage(key: args.key, product: args.product),
+      );
     },
   );
+}
+
+class ProductInfoRouteArgs {
+  const ProductInfoRouteArgs({this.key, this.product});
+
+  final _i5.Key? key;
+
+  final _i6.ProductEntity? product;
+
+  @override
+  String toString() {
+    return 'ProductInfoRouteArgs{key: $key, product: $product}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! ProductInfoRouteArgs) return false;
+    return key == other.key && product == other.product;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ product.hashCode;
 }
 
 /// generated route for

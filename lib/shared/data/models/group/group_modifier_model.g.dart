@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../../../../../shared/data/models/group/group_modifier_model.dart';
+part of 'group_modifier_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
