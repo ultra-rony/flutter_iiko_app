@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iiko_app/core/di/injectable.dart';
@@ -45,20 +46,23 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
         children: [
           Stack(
             children: [
-              Container(
+              SizedBox(
                 height: 300,
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  image:
-                      image != null
-                          ? DecorationImage(
-                            image: NetworkImage(image),
-                            fit: BoxFit.cover,
-                          )
-                          : null,
-                  color: Colors.grey.shade200,
-                ),
+                child:
+                    image != null
+                        ? CachedNetworkImage(
+                          imageUrl: image,
+                          fit: BoxFit.cover,
+                          errorWidget:
+                              (context, url, error) => Container(
+                                color: Colors.grey.shade200,
+                                child: const Icon(Icons.image_not_supported),
+                              ),
+                        )
+                        : Container(color: Colors.grey.shade200),
               ),
+
               SafeArea(
                 child: IconButton(
                   icon: const Icon(Icons.arrow_back),
