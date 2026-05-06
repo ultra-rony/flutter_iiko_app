@@ -20,6 +20,16 @@ import 'package:flutter_iiko_app/features/cart/domain/repositories/cart_reposito
     as _i566;
 import 'package:flutter_iiko_app/features/cart/presentation/cubit/cart_cubit.dart'
     as _i787;
+import 'package:flutter_iiko_app/features/city_selection/data/data_sources/city_selection_remote_data_source.dart'
+    as _i525;
+import 'package:flutter_iiko_app/features/city_selection/data/repositories/city_selection_repository_impl.dart'
+    as _i491;
+import 'package:flutter_iiko_app/features/city_selection/domain/repositories/city_selection_repository.dart'
+    as _i411;
+import 'package:flutter_iiko_app/features/city_selection/domain/use_cases/get_remote_cities_use_case.dart'
+    as _i621;
+import 'package:flutter_iiko_app/features/city_selection/presentation/cubit/city_selection_cubit.dart'
+    as _i533;
 import 'package:flutter_iiko_app/features/nomenclature/data/data_sources/nomenclature_remote_data_source.dart'
     as _i25;
 import 'package:flutter_iiko_app/features/nomenclature/data/repositories/nomenclature_repository_impl.dart'
@@ -88,8 +98,22 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i25.NomenclatureRemoteDataSource>(
       () => _i25.NomenclatureRemoteDataSourceImpl(gh<_i361.Dio>()),
     );
+    gh.lazySingleton<_i525.CitySelectionRemoteDataSource>(
+      () => _i525.CitySelectionRemoteDataSourceImpl(gh<_i361.Dio>()),
+    );
     gh.lazySingleton<_i638.CartRemoteDataSource>(
       () => _i638.CartRemoteDataSourceImpl(gh<_i361.Dio>()),
+    );
+    gh.lazySingleton<_i411.CitySelectionRepository>(
+      () => _i491.CitySelectionRepositoryImpl(
+        gh<_i525.CitySelectionRemoteDataSource>(),
+      ),
+    );
+    gh.factory<_i621.GetRemoteCitiesUseCase>(
+      () => _i621.GetRemoteCitiesUseCase(gh<_i411.CitySelectionRepository>()),
+    );
+    gh.lazySingleton<_i533.CitySelectionCubit>(
+      () => _i533.CitySelectionCubit(gh<_i621.GetRemoteCitiesUseCase>()),
     );
     gh.lazySingleton<_i1052.ProductInfoRepository>(
       () => _i311.ProductInfoRepositoryImpl(

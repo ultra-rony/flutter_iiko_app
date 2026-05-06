@@ -42,6 +42,16 @@ class _NomenclaturePageState extends State<NomenclaturePage> {
                     expandedHeight: 200,
                     floating: false,
                     pinned: true,
+                    actions: [
+                      IconButton(
+                        icon: const Icon(Icons.location_city_outlined),
+                        onPressed: () {
+                          AutoRouter.of(
+                            context,
+                          ).push(const CitySelectionRoute());
+                        },
+                      ),
+                    ],
                     flexibleSpace: FlexibleSpaceBar(
                       title: const Text('Iiko API Flutter App'),
                       background: Padding(
