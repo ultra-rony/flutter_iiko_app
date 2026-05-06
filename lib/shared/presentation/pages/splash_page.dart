@@ -30,7 +30,7 @@ class _SplashPageState extends State<SplashPage> {
             },
           );
         },
-        child: const CircularProgressIndicator(),
+        child: const Center(child: CircularProgressIndicator()),
       ),
     );
   }
