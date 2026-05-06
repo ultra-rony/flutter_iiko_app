@@ -65,3 +65,33 @@ Core functionality is being implemented step by step:
   https://api-ru.iiko.services/docs
 
 ---
+
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/ultra-rony/flutter_iiko_app.git
+```
+
+```bash
+cd flutter_iiko_app
+```
+
+Create a .env file in the root directory and add your iiko API key:
+
+```bash
+touch .env
+```
+
+Replace with your actual API key
+
+```bash
+IIKO_API_KEY=your_iiko_api_key
+```
+
+```bash
+flutter pub get
+```
+
+```bash
+flutter run
+```
