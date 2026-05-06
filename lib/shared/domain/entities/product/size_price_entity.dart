@@ -1,4 +1,4 @@
-import 'package:flutter_iiko_app/shared/domain/entities/price/price_entity.dart';
+import 'package:flutter_iiko_app/shared/domain/entities/product/price_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'size_price_entity.freezed.dart';

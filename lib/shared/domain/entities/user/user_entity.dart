@@ -1,6 +1,6 @@
-import 'package:flutter_iiko_app/shared/domain/entities/user_card/user_card_entity.dart';
-import 'package:flutter_iiko_app/shared/domain/entities/user_category/user_category_entity.dart';
-import 'package:flutter_iiko_app/shared/domain/entities/user_wallet/user_wallet_balance_entity.dart';
+import 'package:flutter_iiko_app/shared/domain/entities/user/user_card_entity.dart';
+import 'package:flutter_iiko_app/shared/domain/entities/user/user_category_entity.dart';
+import 'package:flutter_iiko_app/shared/domain/entities/user/user_wallet_balance_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user_entity.freezed.dart';

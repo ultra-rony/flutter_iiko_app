@@ -1,6 +1,6 @@
-import 'package:flutter_iiko_app/shared/domain/entities/group/group_modifier_entity.dart';
-import 'package:flutter_iiko_app/shared/domain/entities/modifier/modifier_entity.dart';
-import 'package:flutter_iiko_app/shared/domain/entities/size/size_price_entity.dart';
+import 'package:flutter_iiko_app/shared/domain/entities/product/group_modifier_entity.dart';
+import 'package:flutter_iiko_app/shared/domain/entities/product/modifier_entity.dart';
+import 'package:flutter_iiko_app/shared/domain/entities/product/size_price_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'product_entity.freezed.dart';

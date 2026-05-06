@@ -1,4 +1,4 @@
-import 'package:flutter_iiko_app/shared/data/models/child/child_modifier_model.dart';
+import 'package:flutter_iiko_app/shared/data/models/product/child_modifier_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'group_modifier_model.g.dart';
