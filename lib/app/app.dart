@@ -4,6 +4,7 @@ import 'package:flutter_iiko_app/app/route/app_routers.dart';
 import 'package:flutter_iiko_app/core/di/injectable.dart';
 import 'package:flutter_iiko_app/features/cart/presentation/cubit/cart_cubit.dart';
 import 'package:flutter_iiko_app/features/city_selection/presentation/cubit/city_selection_cubit.dart';
+import 'package:flutter_iiko_app/features/street_selection/presentation/cubit/street_selection_cubit.dart';
 import 'package:flutter_iiko_app/shared/presentation/cubit/auth_cubit.dart';
 
 class App extends StatelessWidget {
@@ -19,6 +20,9 @@ class App extends StatelessWidget {
         BlocProvider<CartCubit>(create: (_) => getIt<CartCubit>()),
         BlocProvider<CitySelectionCubit>(
           create: (_) => getIt<CitySelectionCubit>(),
+        ),
+        BlocProvider<StreetSelectionCubit>(
+          create: (_) => getIt<StreetSelectionCubit>(),
         ),
       ],
       child: MaterialApp.router(

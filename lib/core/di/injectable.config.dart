@@ -48,6 +48,16 @@ import 'package:flutter_iiko_app/features/product_info/domain/repositories/produ
     as _i1052;
 import 'package:flutter_iiko_app/features/product_info/presentation/cubit/product_info_cubit.dart'
     as _i565;
+import 'package:flutter_iiko_app/features/street_selection/data/data_sources/street_selection_remote_data_source.dart'
+    as _i926;
+import 'package:flutter_iiko_app/features/street_selection/data/repositories/street_selection_repository_impl.dart'
+    as _i1033;
+import 'package:flutter_iiko_app/features/street_selection/domain/repositories/street_selection_repository.dart'
+    as _i496;
+import 'package:flutter_iiko_app/features/street_selection/domain/use_cases/get_remote_streets_use_case.dart'
+    as _i394;
+import 'package:flutter_iiko_app/features/street_selection/presentation/cubit/street_selection_cubit.dart'
+    as _i141;
 import 'package:flutter_iiko_app/shared/data/data_sources/auth_local_data_source.dart'
     as _i819;
 import 'package:flutter_iiko_app/shared/data/data_sources/auth_remote_data_source.dart'
@@ -98,6 +108,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i25.NomenclatureRemoteDataSource>(
       () => _i25.NomenclatureRemoteDataSourceImpl(gh<_i361.Dio>()),
     );
+    gh.lazySingleton<_i926.StreetSelectionRemoteDataSource>(
+      () => _i926.StreetSelectionRemoteDataSourceImpl(gh<_i361.Dio>()),
+    );
     gh.lazySingleton<_i525.CitySelectionRemoteDataSource>(
       () => _i525.CitySelectionRemoteDataSourceImpl(gh<_i361.Dio>()),
     );
@@ -134,6 +147,11 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i837.AuthRemoteDataSource>(),
       ),
     );
+    gh.lazySingleton<_i496.StreetSelectionRepository>(
+      () => _i1033.StreetSelectionRepositoryImpl(
+        gh<_i926.StreetSelectionRemoteDataSource>(),
+      ),
+    );
     gh.factory<_i158.GetRemoteOrganizationsUseCase>(
       () => _i158.GetRemoteOrganizationsUseCase(gh<_i1009.AuthRepository>()),
     );
@@ -153,6 +171,13 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i60.GetAccessTokenUseCase>(),
         gh<_i158.GetRemoteOrganizationsUseCase>(),
       ),
+    );
+    gh.factory<_i394.GetRemoteStreetsUseCase>(
+      () =>
+          _i394.GetRemoteStreetsUseCase(gh<_i496.StreetSelectionRepository>()),
+    );
+    gh.lazySingleton<_i141.StreetSelectionCubit>(
+      () => _i141.StreetSelectionCubit(gh<_i394.GetRemoteStreetsUseCase>()),
     );
     gh.lazySingleton<_i165.NomenclatureCubit>(
       () => _i165.NomenclatureCubit(gh<_i907.GetRemoteNomenclatureUseCase>()),

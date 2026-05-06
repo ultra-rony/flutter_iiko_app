@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_iiko_app/app/route/app_routers.gr.dart';
 import 'package:flutter_iiko_app/features/city_selection/presentation/cubit/city_selection_cubit.dart';
 
 @RoutePage()
@@ -50,7 +51,11 @@ class _CitySelectionPageState extends State<CitySelectionPage> {
                     elevation: 2,
                     child: InkWell(
                       borderRadius: BorderRadius.circular(12),
-                      onTap: () {},
+                      onTap: () {
+                        AutoRouter.of(
+                          context,
+                        ).push(StreetSelectionRoute(cityId: city.id ?? ""));
+                      },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 16,
