@@ -4,8 +4,8 @@
 
 # 🍽️ Flutter iiko Cloud API App
 
-A modern **Flutter-based client** for integrating with the **iiko Cloud REST API**.  
-This project demonstrates how to build a scalable restaurant ordering and management app using clean architecture and Flutter best practices.
+A modern Flutter-based client for integrating with the iiko REST API.
+This project demonstrates how to build a scalable restaurant ordering and management app using Flutter best practices.
 
 > ⚠️ Project is currently under active development. Features and structure may change frequently.
 
@@ -28,7 +28,7 @@ Core functionality is being implemented step by step:
 ## ✨ Features (Planned)
 
 ### 🔐 Authentication
-- iiko Cloud API authentication
+- iiko API authentication
 - Token management & refresh
 
 ### 🏢 Organization
@@ -53,22 +53,13 @@ Core functionality is being implemented step by step:
 - Live order updates
 - Status history
 
-### 🌐 Architecture
-- Clean Architecture principles
-- Scalable project structure
-- Environment-based configuration (.env support)
-
 ---
 
 ## 🧱 Tech Stack
 
-- **Flutter** (latest stable)
+- **Flutter**
 - **Dart**
-- **iiko Cloud REST API**  
+- **iiko REST API**  
   https://api-ru.iiko.services/docs
-- **Dio / Http**
-- State Management (TBD: BLoC)
-- JSON serialization (json_serializable)
-- Environment configs (.env / flutter_dotenv)
 
 ---
