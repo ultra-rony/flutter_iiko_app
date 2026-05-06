@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/ultra-rony/flutter_iiko_app/blob/main/screenshots/logo_iiko.jpg?raw=true" height="250" width="250" alt="polygon_map" />
+    <img src="https://github.com/ultra-rony/flutter_iiko_app/blob/main/screenshots/logo_iiko.jpg?raw=true" height="400" width="400" alt="polygon_map" />
 </p>
 
 # 🍽️ Flutter iiko Cloud API App
