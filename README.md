@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="https://github.com/ultra-rony/flutter_iiko_app/blob/main/screenshots/logo_iiko.jpg?raw=true" height="250" width="250" alt="polygon_map" />
+</p>
+
 # 🍽️ Flutter iiko Cloud API App
 
 A modern **Flutter-based client** for integrating with the **iiko Cloud REST API**.  
@@ -68,14 +72,3 @@ Core functionality is being implemented step by step:
 - Environment configs (.env / flutter_dotenv)
 
 ---
-
-## 📁 Project Structure (Planned)
-
-```bash
-lib/
- ├── app/              # App entry, router, DI, theme, config
- ├── core/             # Shared low-level logic (errors, utils, network, constants)
- ├── features/         # Feature-based modules (auth, menu, orders, etc.)
- ├── shared/           # Reusable UI components (buttons, widgets, etc.)
- └── main.dart
-```
