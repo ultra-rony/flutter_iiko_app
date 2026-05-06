@@ -18,7 +18,6 @@ class CitySelectionCubit extends Cubit<CitySelectionState> {
   Future<void> cities() async {
     try {
       final result = await _getRemoteCitiesUseCase();
-      print("dsadsadssad :${result.data}");
       emit(CitySelectionState.success(result.data));
     } catch (e) {
       emit(CitySelectionState.error(e.toString()));
