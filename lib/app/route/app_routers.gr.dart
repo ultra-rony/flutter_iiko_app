@@ -11,7 +11,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i4;
 import 'package:flutter/material.dart' as _i5;
-import 'package:flutter_iiko_app/features/nomenclature/presentation/pages/nomenclature_screen.dart'
+import 'package:flutter_iiko_app/features/nomenclature/presentation/pages/nomenclature_page.dart'
     as _i1;
 import 'package:flutter_iiko_app/features/product_info/presentation/pages/product_info_page.dart'
     as _i2;
@@ -21,7 +21,7 @@ import 'package:flutter_iiko_app/shared/presentation/pages/splash_page.dart'
     as _i3;
 
 /// generated route for
-/// [_i1.NomenclatureScreen]
+/// [_i1.NomenclaturePage]
 class NomenclatureRoute extends _i4.PageRouteInfo<void> {
   const NomenclatureRoute({List<_i4.PageRouteInfo>? children})
     : super(NomenclatureRoute.name, initialChildren: children);
@@ -31,7 +31,7 @@ class NomenclatureRoute extends _i4.PageRouteInfo<void> {
   static _i4.PageInfo page = _i4.PageInfo(
     name,
     builder: (data) {
-      return _i4.WrappedRoute(child: const _i1.NomenclatureScreen());
+      return _i4.WrappedRoute(child: const _i1.NomenclaturePage());
     },
   );
 }

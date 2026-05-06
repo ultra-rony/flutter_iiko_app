@@ -7,11 +7,11 @@ import 'package:flutter_iiko_app/features/nomenclature/presentation/cubit/nomenc
 import 'package:flutter_iiko_app/features/nomenclature/presentation/widgets/product_widget.dart';
 
 @RoutePage()
-class NomenclatureScreen extends StatefulWidget implements AutoRouteWrapper {
-  const NomenclatureScreen({super.key});
+class NomenclaturePage extends StatefulWidget implements AutoRouteWrapper {
+  const NomenclaturePage({super.key});
 
   @override
-  createState() => _NomenclatureScreenState();
+  createState() => _NomenclaturePageState();
 
   @override
   Widget wrappedRoute(BuildContext context) {
@@ -19,7 +19,7 @@ class NomenclatureScreen extends StatefulWidget implements AutoRouteWrapper {
   }
 }
 
-class _NomenclatureScreenState extends State<NomenclatureScreen> {
+class _NomenclaturePageState extends State<NomenclaturePage> {
   @override
   void initState() {
     super.initState();
@@ -61,7 +61,9 @@ class _NomenclatureScreenState extends State<NomenclatureScreen> {
                       final product = nomenclature?.products?[index];
                       return GestureDetector(
                         onTap: () {
-                          AutoRouter.of(context).push(ProductInfoRoute(product: product));
+                          AutoRouter.of(
+                            context,
+                          ).push(ProductInfoRoute(product: product));
                         },
                         child: ProductWidget(product: product),
                       );
