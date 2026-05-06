@@ -1,32 +1,32 @@
 .PHONY: clean get build all
 
 clean:
-	@echo "🧹 Очистка проекта..."
+	@echo "🧹 Cleaning up the project..."
 	flutter clean
 
 get:
-	@echo "📦 Установка зависимостей..."
+	@echo "📦 Installing dependencies..."
 	flutter pub get
 
 build:
-	@echo "⚙️ Генерация кода..."
+	@echo "⚙️ Generating code..."
 	flutter pub run build_runner build --delete-conflicting-outputs
 
 all: clean get build
 	@echo "✅ Готово!"
 
 get_mason:
-	@echo "👨‍🎤 Установка зависимостей mason..."
+	@echo "👨‍🎤 Installing mason dependencies..."
 	mason get feature
 
 new_feature:
-	@echo "🧟‍♂️ Создание новой фичи!"
+	@echo "🧟‍♂️ Creating a new feature!"
 	mason make feature
 
 feature: get_mason new_feature build get
 
 ios_rebuild:
-	@echo "🍎 Ребилд ios"
+	@echo "🍎 iOS rebuild"
 	flutter clean && \
 	flutter pub get && \
 	cd ios/ && \
@@ -36,5 +36,5 @@ ios_rebuild:
     	pod install
 
 xcode:
-	@echo "🍎 Открываем xcode"
+	@echo "🍎 Open Xcode"
 	open ios/Runner.xcworkspace
