@@ -7,6 +7,8 @@
 A modern Flutter-based client for integrating with the iiko REST API.
 This project demonstrates how to build a scalable restaurant ordering and management app using Flutter best practices.
 
+> ⭐ Support the project with a like — I’ll update it more often and make it even better 😄
+
 > ⚠️ Project is currently under active development. Features and structure may change frequently.
 
 ---
