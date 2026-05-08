@@ -2,7 +2,7 @@
     <img src="https://github.com/ultra-rony/flutter_iiko_app/blob/main/screenshots/logo_iiko.jpg?raw=true" height="400" width="400" alt="polygon_map" />
 </p>
 
-# 🍽️ Flutter iiko Cloud API App
+# 🍽️ Flutter iiko API App
 
 A modern Flutter-based client for integrating with the iiko REST API.
 This project demonstrates how to build a scalable restaurant ordering and management app using Flutter best practices.
@@ -48,7 +48,7 @@ Core functionality is being implemented step by step:
 - Price calculation
 
 ### 📤 Order Processing
-- Send orders to iiko Cloud
+- Send orders to iiko api
 - Track order status in real time
 
 ### 📦 Order Tracking
